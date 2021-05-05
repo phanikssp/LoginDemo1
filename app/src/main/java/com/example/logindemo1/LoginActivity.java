@@ -43,9 +43,34 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        button_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String txt_email = email.getText().toString();
+                String txt_password = password.getText().toString();
 
+                if(TextUtils.isEmpty(txt_email) || TextUtils.isEmpty(txt_password)) {
+                    Toast.makeText(LoginActivity.this, "Missing Credentials!", Toast.LENGTH_SHORT).show();
+                } else if (txt_password.length() < 6) {
+                    Toast.makeText(LoginActivity.this, "Password too short!", Toast.LENGTH_SHORT).show();
+                } else {
+                    registerUser(txt_email, txt_password);
+                }
+            }
+        });
+    }
 
-
+    private void registerUser(String email, String password) {
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Successful!", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Unsuccessful!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 }
