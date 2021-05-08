@@ -2,6 +2,18 @@
     <string name="app_name">LoginDemo1</string>
     <string name="password">Password</string>
     <string name="register">Register</string>
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
+    <string name="admissions">Admissions</string>
+    <string name="logout">Logout</string>
+
+    <string name="login_page_toolbar_text">Login / Register</string>
+    <string name="dashboard_page_toolbar_text">Dashboard</string>
+
+    <string name="oauth_id">128917058422-lrnn77t40d096pgttkrr8fcee9u2tmrq.apps.googleusercontent.com</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
